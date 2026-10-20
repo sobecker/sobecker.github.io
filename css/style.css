@@ -1,0 +1,183 @@
+/* =====================================================================
+   style.css — design of the whole website
+   ---------------------------------------------------------------------
+   Quick edits:
+   - Colors & fonts: change the values in ":root" right below.
+   - Everything else is grouped by page section (header, home, research,
+     cv, contact, footer, mobile).
+   ===================================================================== */
+
+:root {
+  /* ---- Colors ---- */
+  --ink:    #2a2420;   /* main text */
+  --mid:    #7a6f66;   /* secondary text (dates, captions) */
+  --soft:   #b9ab9c;   /* dashed borders */
+  --faint:  #e3d9cc;   /* light lines */
+  --line:   #ece3d6;   /* separators between list items */
+  --bg:     #faf6ef;   /* page background */
+  --panel:  #f2ebdf;   /* boxes, figure backgrounds */
+  --card:   #fffdf9;   /* research cards */
+  --text2:  #3d342d;   /* card text */
+  --accent: #c0582b;   /* links, tags, highlights */
+
+  /* ---- Curve colors (dark = familiar → light = novel) ---- */
+  --c0: #2a2420;
+  --c1: #c0582b;
+  --c2: #d98a5f;
+  --c3: #e6b493;
+  --c4: #efd2bd;
+  --c5: #f5e4d6;
+
+  /* ---- Fonts ---- */
+  --font: "Source Sans 3", "Segoe UI", Calibri, system-ui, sans-serif;  /* body text */
+  --head: "Fraunces", Georgia, serif;                                   /* headings */
+
+  /* ---- Layout ---- */
+  --maxw:   1040px;    /* maximum page width */
+  --radius: 2px;       /* corner rounding of boxes */
+  --shadow: 0 1px 2px rgba(60,40,20,.06), 0 8px 24px rgba(60,40,20,.06);
+}
+
+/* ---------- Basics ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: var(--head); font-weight: 300; line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: 3rem; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.25rem; font-weight: 400; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; position: relative; }
+main.wrap { padding-top: 56px; padding-bottom: 80px; }
+
+/* dashed guide lines (motif from the talk slides) */
+.guide-v { position: absolute; top: 0; bottom: 0; left: 24px; border-left: 1px dashed var(--faint); pointer-events: none; }
+.guide-h { border: 0; border-top: 1px dashed var(--faint); margin: 0; }
+.indent  { padding-left: 24px; }
+
+/* ---------- Header & navigation ---------- */
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(250,246,239,.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px dashed var(--faint);
+}
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-size: 1.25rem; color: var(--ink); letter-spacing: .02em; }
+.logo:hover { text-decoration: none; }
+nav a { color: var(--mid); margin-left: 28px; }
+nav a:hover { color: var(--ink); text-decoration: none; }
+nav a.active { color: var(--ink); border-bottom: 2px solid var(--accent); padding-bottom: 3px; }
+
+/* ---------- Home: intro ---------- */
+.hero { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: center; padding-left: 24px; }
+.photo {
+  width: 240px; height: 240px; border-radius: 4px;
+  background: var(--panel); border: 1px dashed var(--soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--mid); font-size: .9rem; overflow: hidden; position: relative;
+}
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.role { color: var(--mid); font-size: 1.15rem; margin: -.2em 0 1.1em; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.4em; }
+.links a { border: 1px solid var(--faint); border-radius: 999px; padding: 4px 14px; font-size: .92rem; color: var(--ink); }
+.links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.curves { display: block; width: 100%; height: 150px; margin-top: 40px; }
+
+/* ---------- Home: news ---------- */
+.news { margin-top: 36px; padding-left: 24px; }
+.news-list { max-height: 340px; overflow-y: auto; border-top: 1px dashed var(--faint); border-bottom: 1px dashed var(--faint); padding-right: 8px; }
+.news-item { display: grid; grid-template-columns: 104px 100px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: .98rem; }
+.news-item:last-child { border-bottom: none; }
+.news-date { color: var(--mid); font-size: .9rem; }
+.tag {
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--accent); border: 1px solid currentColor; border-radius: 4px;
+  padding: 1px 6px; height: fit-content; width: fit-content;
+}
+.tag.upcoming { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ---------- Research: featured paper ---------- */
+.featured {
+  display: grid; grid-template-columns: 1fr 260px; gap: 32px;
+  background: var(--panel); border-top: 3px solid var(--accent); border-radius: var(--radius);
+  padding: 28px 32px; margin: 0 0 48px 24px;
+}
+.kicker { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.featured h3 { font-size: 1.45rem; font-weight: 300; margin: .3em 0; }
+.meta { color: var(--mid); font-size: .95rem; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.btn { font-size: .82rem; border: 1px solid var(--faint); border-radius: 4px; padding: 2px 10px; color: var(--ink); background: var(--card); }
+.btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.btn.muted { color: var(--mid); }
+
+/* ---------- Research: theme cards ---------- */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-left: 24px; }
+.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+.card.next { border: 1px dashed var(--soft); box-shadow: none; }
+.card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.card-body p { margin: .2em 0 .8em; color: var(--text2); font-size: .98rem; }
+.card-body .btns { margin-top: auto; }
+
+/* Figure boxes: your image (images/fig-*.png) is shown on top;
+   if the file is missing, the drawn placeholder underneath stays visible. */
+.fig { height: 190px; background: var(--panel); position: relative; overflow: hidden; border-bottom: 1px dashed var(--faint); }
+.featured .fig { border: 1px dashed var(--faint); border-radius: 4px; }
+.fig svg { width: 100%; height: 100%; display: block; }
+.fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--card); z-index: 1; }
+.fig .note { position: absolute; right: 8px; bottom: 6px; font-size: .7rem; color: var(--mid); background: var(--card); padding: 1px 6px; border-radius: 3px; }
+.gabor { position: absolute; border-radius: 50%; filter: blur(2px);
+  -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 70%);
+          mask-image: radial-gradient(circle, #000 25%, transparent 70%); }
+
+/* ---------- Research: demo & publications ---------- */
+.demo { margin: 48px 0 0 24px; border: 2px dashed var(--soft); border-radius: 8px; padding: 36px; text-align: center; color: var(--mid); }
+.demo h3 { color: var(--ink); }
+.publist { margin: 56px 0 0 24px; }
+.pub { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.pub .btns { margin-top: 6px; }
+
+/* ---------- CV ---------- */
+.dl { display: inline-block; margin: 0 0 36px 24px; background: var(--ink); color: var(--bg); padding: 9px 20px; border-radius: 4px; }
+.dl:hover { background: var(--accent); color: #fff; text-decoration: none; }
+.cv section { margin-bottom: 40px; }
+.cv h2 { font-size: 1.4rem; border-bottom: 1px dashed var(--faint); padding-bottom: 6px; }
+.row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 8px 0; }
+.row .d { color: var(--mid); font-size: .95rem; }
+.row .w { font-weight: 600; }
+.row .s { color: var(--mid); font-size: .95rem; }
+
+/* ---------- Contact ---------- */
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact dl { display: grid; grid-template-columns: 110px 1fr; gap: 10px 16px; margin: 0; }
+.contact dt { color: var(--mid); }
+.contact dd { margin: 0; }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px dashed var(--faint); color: var(--mid); font-size: .85rem; }
+footer .wrap { padding: 20px 24px; display: flex; justify-content: space-between; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  nav a { margin-left: 16px; }
+  h1 { font-size: 2.2rem; }
+  .hero { grid-template-columns: 150px 1fr; gap: 24px; }
+  .photo { width: 150px; height: 150px; }
+  .cards, .contact, .featured { grid-template-columns: 1fr; }
+  .news-item { grid-template-columns: 80px 1fr; }
+  .news-item .tag { display: none; }
+  .row { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 520px) {
+  .hero { grid-template-columns: 1fr; }
+  header .logo { display: none; }
+  nav a:first-child { margin-left: 0; }
+}

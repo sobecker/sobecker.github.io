@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research · Sophia Becker</title>
+  <meta name="description" content="Research by Sophia Becker on novelty, curiosity, intrinsic motivation and working memory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">Sophia Becker</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="guide-v"></div>
+
+  <!-- ===== Featured paper ===== -->
+  <div class="featured">
+    <div>
+      <div class="kicker">Featured paper · Neuron 2026</div>
+      <h3>Representational similarity modulates neural and behavioral signatures of novelty</h3>
+      <div class="meta"><strong>Becker S</strong>, Modirshanechi A, Gerstner W</div>
+      <p style="margin:.8em 0 0">Novelty is not a fixed property of a stimulus. It depends on how similar the stimulus is to what a learner has already represented. This view reconciles conflicting findings across neural and behavioral studies.</p>
+      <div class="btns">
+        <a class="btn" href="https://doi.org/10.1016/j.neuron.2026.01.007">Paper</a>
+        <a class="btn" href="https://github.com/sobecker/sim_nov">Code</a>
+        <a class="btn" href="https://doi.org/10.5281/zenodo.18117791">Data</a>
+        <a class="btn" href="https://www.youtube.com/watch?v=ebl5bV6X9bc">Cosyne talk (video)</a>
+      </div>
+    </div>
+    <div class="fig">
+      <svg id="figMuseum" viewBox="0 0 260 190" aria-hidden="true"></svg>
+      <span class="note">replace: images/fig-featured.png</span>
+      <img src="images/fig-featured.png" alt="Illustration: a visitor walking past paintings in a museum" onerror="this.remove()">
+    </div>
+  </div>
+
+  <!-- ===== Research themes =====
+       Each card: figure (images/fig-*.png), title, short text, link buttons. -->
+  <h2 class="indent">Research themes</h2>
+  <div class="cards">
+
+    <article class="card">
+      <div class="fig">
+        <svg data-curves="card" viewBox="0 0 400 190" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <span class="note">replace: images/fig-novelty.png</span>
+        <img src="images/fig-novelty.png" alt="" onerror="this.remove()">
+      </div>
+      <div class="card-body">
+        <h3>Novelty depends on what you have already learned</h3>
+        <p>A theory of novelty defined over a learner's internal representation. It explains how similarity to past experience shapes novelty signals in the brain and novelty-driven behavior.</p>
+        <div class="btns">
+          <a class="btn" href="https://doi.org/10.1016/j.neuron.2026.01.007">Neuron 2026</a>
+          <a class="btn" href="https://doi.org/10.5075/epfl-thesis-11158">PhD thesis</a>
+          <a class="btn" href="https://github.com/sobecker/sim_nov">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="fig">
+        <svg id="figMaze" viewBox="0 0 400 190" aria-hidden="true"></svg>
+        <span class="note">replace: images/fig-curiosity.png</span>
+        <img src="images/fig-curiosity.png" alt="" onerror="this.remove()">
+      </div>
+      <div class="card-body">
+        <h3>Curiosity and intrinsic motivation</h3>
+        <p>Formal models of what drives exploration without external reward, such as novelty, surprise and information gain, and of when curiosity actually helps an agent learn.</p>
+        <div class="btns">
+          <a class="btn" href="https://doi.org/10.1017/S0140525X23003424">BBS 2024</a>
+          <a class="btn" href="https://doi.org/10.1162/opmi.a.9">Open Mind 2025</a>
+          <a class="btn" href="https://doi.org/10.1016/j.conb.2023.102758">COIN 2023</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="fig">
+        <svg id="figNet" viewBox="0 0 400 190" aria-hidden="true"></svg>
+        <span class="note">replace: images/fig-working-memory.png</span>
+        <img src="images/fig-working-memory.png" alt="" onerror="this.remove()">
+      </div>
+      <div class="card-body">
+        <h3>Working memory and synaptic dynamics</h3>
+        <p>How slow astrocytic signaling and short-term synaptic plasticity set how long recurrent networks can hold information in memory.</p>
+        <div class="btns">
+          <a class="btn" href="https://doi.org/10.1371/journal.pcbi.1010543">PLoS Comput Biol 2022</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card next">
+      <div class="fig" id="figGabor">
+        <span class="note">replace: images/fig-next.png</span>
+        <img src="images/fig-next.png" alt="" onerror="this.remove()">
+      </div>
+      <div class="card-body">
+        <h3>Next: novelty in human and machine learning</h3>
+        <p>How does the novelty of what we encounter shape what we learn? I am building on my novelty theory to compare learning in humans and artificial neural networks.</p>
+        <div class="btns"><span class="btn muted">Coming soon</span></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== Interactive demo (placeholder) ===== -->
+  <div class="demo">
+    <h3>Interactive demo · coming soon</h3>
+    <p>"See novelty fade with repetition": click through stimuli and watch your novelty signal change as you learn.</p>
+  </div>
+
+  <!-- ===== Publications =====
+       To add a paper: copy one <div class="pub">…</div> block and put it at the top. -->
+  <div class="publist">
+    <h2>Publications</h2>
+    <p class="meta">* first author · <a href="https://scholar.google.com/citations?user=6RqdLiQAAAAJ&amp;hl=en">full list on Google Scholar</a></p>
+
+    <div class="pub">
+      <div><strong>Becker S*</strong>, Modirshanechi A, Gerstner W (2026). Representational similarity modulates neural and behavioral signatures of novelty. <em>Neuron</em> 114.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.1016/j.neuron.2026.01.007">DOI</a><a class="btn" href="https://github.com/sobecker/sim_nov">Code</a><a class="btn" href="https://doi.org/10.5281/zenodo.18117791">Data</a></div>
+    </div>
+    <div class="pub">
+      <div><strong>Becker S</strong> (2026). A theory of novelty and exploration in naturalistic environments. <em>PhD thesis, EPFL</em>.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.5075/epfl-thesis-11158">DOI</a></div>
+    </div>
+    <div class="pub">
+      <div>Gruaz L*, Modirshanechi A*, <strong>Becker S</strong>, Brea J (2025). Merits of curiosity: a simulation study. <em>Open Mind</em> 9.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.1162/opmi.a.9">DOI</a><a class="btn" href="https://github.com/gruaz-lucas/Merits_of_curiosity">Code</a></div>
+    </div>
+    <div class="pub">
+      <div><strong>Becker S*</strong>, Modirshanechi A, Gerstner W (2024). Computational models of intrinsic motivation for curiosity and creativity. <em>Behavioral and Brain Sciences</em> 47.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.1017/S0140525X23003424">DOI</a></div>
+    </div>
+    <div class="pub">
+      <div>Modirshanechi A*, <strong>Becker S</strong>, Brea J, Gerstner W (2023). Surprise and novelty in the brain. <em>Current Opinion in Neurobiology</em> 82.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.1016/j.conb.2023.102758">DOI</a></div>
+    </div>
+    <div class="pub">
+      <div><strong>Becker S*</strong>, Nold A*, Tchumatchenko T (2022). Modulation of working memory duration by synaptic and astrocytic mechanisms. <em>PLoS Computational Biology</em> 18.</div>
+      <div class="btns"><a class="btn" href="https://doi.org/10.1371/journal.pcbi.1010543">DOI</a><a class="btn" href="https://gitlab.rlp.net/braincodepublished/neuronal-network-simulations-June-2021">Code</a></div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Sophia Becker</span><span>Last updated Oct 2026</span></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
